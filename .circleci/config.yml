@@ -11,7 +11,7 @@ jobs:
       - run: echo "test"
       - run: go get -v -t -d ./...
       - run: go test -v ./...
-      - run: ./clone.sh
+      - run: ./bootstrap.sh
       - run: go run main.go
       - run: ./commit.sh DEBUG
   cron_test:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - run: echo "cron_test"
-      - run: ./clone.sh
+      - run: ./bootstrap.sh
       - run: go run main.go
       - run: ./commit.sh
 workflows:

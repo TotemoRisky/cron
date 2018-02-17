@@ -10,6 +10,7 @@ TOKEN=$GITHUB_TOKEN_CRON
 
 #clone
 rm -rf $REPO_NAME
+echo "try clone"
 git clone https://${USER}:${TOKEN}@github.com/${ORG_NAME}/${REPO_NAME} > /dev/null 2>&1
 if [[ -d $REPO_NAME ]] ; then
     cd $REPO_NAME
@@ -36,11 +37,12 @@ EOF
 
 
 #commit
-git checkout --orphan tmp
+#git checkout --orphan tmp
 git add .
 git commit --allow-empty -m "CRON_$NOW"
-git checkout -B master
-git branch -d tmp
+#git checkout -B master
+#git branch -d tmp
+echo "try push"
 git push -f --set-upstream origin master > /dev/null 2>&1
 
 #cleanup

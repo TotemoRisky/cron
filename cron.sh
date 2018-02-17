@@ -10,7 +10,7 @@ GIT_EMAIL="risky.totemo@gmail.com"
 
 #clone
 rm -rf $REPO_NAME
-git clone https://${USER}:${TOKEN}@github.com/${ORG_NAME}/${REPO_NAME}
+git clone https://${USER}:${TOKEN}@github.com/${ORG_NAME}/${REPO_NAME} /dev/null 2>&1
 if [[ -d $REPO_NAME ]] ; then
     cd $REPO_NAME
 else

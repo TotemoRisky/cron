@@ -15,8 +15,8 @@ cat << EOF > latest.json
 EOF
 
 #commit
-git config --local user.name $GIT_USER_NAME
-git config --local user.email $GIT_USER_EMAIL
+git config --local user.name "TotemoRisky"
+git config --local user.email "risky.totemo@gmail.com"
 #git checkout --orphan tmp
 git add .
 git commit --allow-empty -m "${MODE}_$NOW"

@@ -6,9 +6,6 @@ jobs:
   test:
     docker:
       - image: circleci/golang:1.8
-    environment:
-      GIT_USER_NAME: TotemoRisky
-      GIT_USER_EMAIL: risky.totemo@gmail.com
     steps:
       - checkout
       - run: echo "test"

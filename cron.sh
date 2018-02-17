@@ -25,6 +25,8 @@ git config --local user.email $GIT_EMAIL
 
 
 
+go run main.go
+
 bash -c "cat << 'EOF' > ok
 $(date +%Y%m%d%H%M%S)
 EOF"

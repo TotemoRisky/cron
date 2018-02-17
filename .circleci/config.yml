@@ -11,9 +11,7 @@ jobs:
       - run: echo "test"
       - run: go get -v -t -d ./...
       - run: go test -v ./...
-      - run: ./bootstrap.sh
-      - run: go run main.go
-      - run: ./commit.sh DEBUG
+      - run: ./bootstrap.sh DEBUG
   cron_test:
     docker:
       - image: circleci/golang:1.8
@@ -21,8 +19,6 @@ jobs:
       - checkout
       - run: echo "cron_test"
       - run: ./bootstrap.sh
-      - run: go run main.go
-      - run: ./commit.sh
 workflows:
   version: 2
   normal_test_workflow:

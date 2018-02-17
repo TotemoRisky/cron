@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+MODE="CRON"
+if [ $# = 1 ]; then
+   MODE=$1
+fi
+echo MODE:$MODE
+
 bash -c "cat << 'EOF' > ok
 $(date +%Y%m%d%H%M%S)
 EOF"
@@ -11,7 +17,7 @@ EOF
 #commit
 #git checkout --orphan tmp
 git add .
-git commit --allow-empty -m "CRON_$NOW"
+git commit --allow-empty -m "${MODE}_$NOW"
 #git checkout -B master
 #git branch -d tmp
 echo "try push"

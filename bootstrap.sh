@@ -20,7 +20,7 @@ git clone https://${USER}:${TOKEN}@github.com/${ORG_NAME}/${REPO_NAME} > /dev/nu
 if [[ -d $REPO_NAME ]] ; then
 	mv main.go $REPO_NAME/
 	cd $REPO_NAME
-	go run maing.go
+	go run main.go
 else
 	echo "clone error"
 	exit

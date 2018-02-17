@@ -18,7 +18,7 @@ rm -rf $REPO_NAME
 echo "try clone"
 git clone https://${USER}:${TOKEN}@github.com/${ORG_NAME}/${REPO_NAME} > /dev/null 2>&1
 if [[ -d $REPO_NAME ]] ; then
-	mv main.go $REPO_NAME/
+	cp main.go $REPO_NAME/
 	cd $REPO_NAME
 	go run main.go
 else
@@ -28,7 +28,7 @@ fi
 
 
 #update
-bash -c "cat << 'EOF' > ok
+bash -c "cat << 'EOF' > VERSION
 $(date +%Y%m%d%H%M%S)
 EOF"
 

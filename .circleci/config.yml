@@ -13,7 +13,7 @@ jobs:
       - run: go test -v ./...
       - run: ./clone.sh
       - run: go run main.go
-      - run: ./commit.sh
+      - run: ./commit.sh DEBUG
   cron_test:
     docker:
       - image: circleci/golang:1.8

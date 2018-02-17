@@ -4,13 +4,13 @@ date
 USER="onoie"
 ORG_NAME=$USER
 REPO_NAME="status"
-TOKEN=$GITHUB_TOKEN_PUSH
 GIT_NAME="TotemoRisky"
 GIT_EMAIL="risky.totemo@gmail.com"
+TOKEN=$GITHUB_TOKEN_CRON
 
 #clone
 rm -rf $REPO_NAME
-git clone https://${USER}:${TOKEN}@github.com/${ORG_NAME}/${REPO_NAME} /dev/null 2>&1
+git clone https://${USER}:${TOKEN}@github.com/${ORG_NAME}/${REPO_NAME} > /dev/null 2>&1
 if [[ -d $REPO_NAME ]] ; then
     cd $REPO_NAME
 else

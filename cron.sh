@@ -41,7 +41,7 @@ git add .
 git commit --allow-empty -m "CRON_$NOW"
 git checkout -B master
 git branch -d tmp
-git push -f --set-upstream origin master
+git push -f --set-upstream origin master > /dev/null 2>&1
 
 #cleanup
 rm -rf $REPO_NAME

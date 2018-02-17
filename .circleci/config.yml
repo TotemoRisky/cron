@@ -11,14 +11,18 @@ jobs:
       - run: echo "test"
       - run: go get -v -t -d ./...
       - run: go test -v ./...
-      - run: ./cron.sh
+      - run: ./clone.sh
+      - run: go run main.go
+      - run: ./commit.sh
   cron_test:
     docker:
       - image: circleci/golang:1.8
     steps:
       - checkout
       - run: echo "cron_test"
-      - run: ./cron.sh
+      - run: ./clone.sh
+      - run: go run main.go
+      - run: ./commit.sh
 workflows:
   version: 2
   normal_test_workflow:
